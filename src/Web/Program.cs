@@ -6,9 +6,16 @@ var builder = WebApplication.CreateBuilder(args);
 if (builder.Environment.IsDevelopment())
 {
     // Development
+    // builder.Services.AddDbContext<MvcMovieContext>(options =>
+    //     options.UseSqlite(builder.Configuration.GetConnectionString("SQLite_MvcMovieContext") ?? throw new InvalidOperationException("Connection string 'MvcMovieContext' not found.")));
+
+    // Develpoment with Postgresql
     builder.Services.AddDbContext<MvcMovieContext>(options =>
-        options.UseSqlite(builder.Configuration.GetConnectionString("MvcMovieContext") ?? throw new InvalidOperationException("Connection string 'MvcMovieContext' not found.")));
-}else{
+        options.UseNpgsql(builder.Configuration.GetConnectionString("Postgresql_MvcMovieContext") ?? throw new InvalidOperationException("Connection string 'MvcMovieContext' not found.")));
+    AppContext.SetSwitch("Npgsql.EnableLegacyTimestampBehavior", true);
+}
+else
+{
     // Production
 }
 
@@ -24,6 +31,7 @@ if (!app.Environment.IsDevelopment())
     // The default HSTS value is 30 days. You may want to change this for production scenarios, see https://aka.ms/aspnetcore-hsts.
     app.UseHsts();
 }
+
 
 app.UseHttpsRedirection();
 app.UseStaticFiles();

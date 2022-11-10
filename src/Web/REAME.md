@@ -18,3 +18,6 @@ dotnet add package Microsoft.EntityFrameworkCore.SqlServer
 >dotnet ef migrations add InitialCreate
 - update database
 >dotnet ef database update
+
+- with Postgresql
+> dotnet add package Npgsql.EntityFrameworkCore.PostgreSQL

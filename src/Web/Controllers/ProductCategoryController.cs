@@ -10,96 +10,87 @@ using Web.Models;
 
 namespace Web.Controllers
 {
-    public class ProductController : Controller
+    public class ProductCategoryController : Controller
     {
         private readonly AppDbContext _context;
 
-        public ProductController(AppDbContext context)
+        public ProductCategoryController(AppDbContext context)
         {
             _context = context;
         }
 
-        // GET: Product
+        // GET: ProductCategory
         public async Task<IActionResult> Index()
         {
-            return _context.Product != null ?
-                        View(await _context.Product.ToListAsync()) :
-                        Problem("Entity set 'AppDbContext.Product'  is null.");
+              return _context.ProductCategory != null ? 
+                          View(await _context.ProductCategory.ToListAsync()) :
+                          Problem("Entity set 'AppDbContext.ProductCategory'  is null.");
         }
 
-        // GET: ShopGrid5
-        public async Task<IActionResult> ShopGrid5()
-        {
-            // ViewData["host"] = $"{this.Request.Scheme}://{this.Request.Host}{this.Request.PathBase}";
-            return _context.Product != null ?
-                        View(await _context.Product.ToListAsync()) :
-                        Problem("Entity set 'AppDbContext.Product'  is null.");
-        }
-
-        // GET: Product/Details/5
+        // GET: ProductCategory/Details/5
         public async Task<IActionResult> Details(int? id)
         {
-            if (id == null || _context.Product == null)
+            if (id == null || _context.ProductCategory == null)
             {
                 return NotFound();
             }
 
-            var product = await _context.Product
+            var productCategory = await _context.ProductCategory
                 .FirstOrDefaultAsync(m => m.Id == id);
-            if (product == null)
+            if (productCategory == null)
             {
                 return NotFound();
             }
 
-            return View(product);
+            return View(productCategory);
         }
 
-        // GET: Product/Create
+        // GET: ProductCategory/Create
         public IActionResult Create()
         {
             return View();
         }
 
-        // POST: Product/Create
+        // POST: ProductCategory/Create
         // To protect from overposting attacks, enable the specific properties you want to bind to.
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("Name,Description,Barcode,Link,Price,SaleOff,Cost,Image,Id")] Product product)
+        public async Task<IActionResult> Create([Bind("Id,Name,Description,Link,Image")] ProductCategory productCategory)
         {
             if (ModelState.IsValid)
             {
-                _context.Add(product);
+                _context.Add(productCategory);
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
-            return View(product);
+            return View(productCategory);
         }
 
-        // GET: Product/Edit/5
+        // GET: ProductCategory/Edit/5
         public async Task<IActionResult> Edit(int? id)
         {
-            if (id == null || _context.Product == null)
+            if (id == null || _context.ProductCategory == null)
             {
                 return NotFound();
             }
 
-            var product = await _context.Product.FindAsync(id);
-            if (product == null)
+            var productCategory = await _context.ProductCategory.FindAsync(id);
+            if (productCategory == null)
             {
                 return NotFound();
             }
-            return View(product);
+            return View(productCategory);
         }
 
-        // POST: Product/Edit/5
+        // POST: ProductCategory/Edit/5
         // To protect from overposting attacks, enable the specific properties you want to bind to.
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("Name,Description,Barcode,Link,Price,SaleOff,Cost,Image,Id")] Product product)
+        public async Task<IActionResult> Edit(int id, [Bind("Id,Name,Description,Link,Image")] ProductCategory productCategory)
         {
-            if (id != product.Id)
+            if (id != productCategory.Id)
             {
                 return NotFound();
             }
@@ -108,12 +99,12 @@ namespace Web.Controllers
             {
                 try
                 {
-                    _context.Update(product);
+                    _context.Update(productCategory);
                     await _context.SaveChangesAsync();
                 }
                 catch (DbUpdateConcurrencyException)
                 {
-                    if (!ProductExists(product.Id))
+                    if (!ProductCategoryExists(productCategory.Id))
                     {
                         return NotFound();
                     }
@@ -124,49 +115,49 @@ namespace Web.Controllers
                 }
                 return RedirectToAction(nameof(Index));
             }
-            return View(product);
+            return View(productCategory);
         }
 
-        // GET: Product/Delete/5
+        // GET: ProductCategory/Delete/5
         public async Task<IActionResult> Delete(int? id)
         {
-            if (id == null || _context.Product == null)
+            if (id == null || _context.ProductCategory == null)
             {
                 return NotFound();
             }
 
-            var product = await _context.Product
+            var productCategory = await _context.ProductCategory
                 .FirstOrDefaultAsync(m => m.Id == id);
-            if (product == null)
+            if (productCategory == null)
             {
                 return NotFound();
             }
 
-            return View(product);
+            return View(productCategory);
         }
 
-        // POST: Product/Delete/5
+        // POST: ProductCategory/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirmed(int id)
         {
-            if (_context.Product == null)
+            if (_context.ProductCategory == null)
             {
-                return Problem("Entity set 'AppDbContext.Product'  is null.");
+                return Problem("Entity set 'AppDbContext.ProductCategory'  is null.");
             }
-            var product = await _context.Product.FindAsync(id);
-            if (product != null)
+            var productCategory = await _context.ProductCategory.FindAsync(id);
+            if (productCategory != null)
             {
-                _context.Product.Remove(product);
+                _context.ProductCategory.Remove(productCategory);
             }
-
+            
             await _context.SaveChangesAsync();
             return RedirectToAction(nameof(Index));
         }
 
-        private bool ProductExists(int id)
+        private bool ProductCategoryExists(int id)
         {
-            return (_context.Product?.Any(e => e.Id == id)).GetValueOrDefault();
+          return (_context.ProductCategory?.Any(e => e.Id == id)).GetValueOrDefault();
         }
     }
 }

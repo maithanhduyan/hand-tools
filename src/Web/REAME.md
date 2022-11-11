@@ -15,14 +15,11 @@ dotnet add package Microsoft.EntityFrameworkCore.SqlServer
 > dotnet add package Npgsql.EntityFrameworkCore.PostgreSQL
 
 - Create CRUD with Movie Entity
-> dotnet aspnet-codegenerator controller -name MoviesController -m Movie -dc MvcMovie.Data.MvcMovieContext --relativeFolderPath Controllers --useDefaultLayout --referenceScriptLibraries -sqlite
-> dotnet aspnet-codegenerator controller -name ProductController -m Product -dc Web.Data.AppDbContext --relativeFolderPath Controllers --useDefaultLayout --referenceScriptLibraries --useNpgsql
+> dotnet aspnet-codegenerator controller -name ProductController -m Product -dc Web.Data.AppDbContext --relativeFolderPath Controllers --useDefaultLayout --referenceScriptLibraries -sqlite
 - Create migration file InitialCreate
 >dotnet ef migrations add InitialCreate
 - update database
 >dotnet ef database update
-
-
 
 - Run project in Production
 > dotnet run --environment Production
@@ -30,4 +27,8 @@ dotnet add package Microsoft.EntityFrameworkCore.SqlServer
 > dotnet run --launch-profile "http"
 
 ### References
+- UI
+[Google Icon](https://fonts.google.com/icons)
+
+- Back-End
 [Entity Framework Core](https://learn.microsoft.com/en-us/ef/core/)

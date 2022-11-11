@@ -1,23 +1,26 @@
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
-using MvcMovie.Data;
+using Web.Models;
+using Web.Data;
 
 var builder = WebApplication.CreateBuilder(args);
+
+#region Database Context
 if (builder.Environment.IsDevelopment())
 {
-    // Development
-    // builder.Services.AddDbContext<MvcMovieContext>(options =>
-    //     options.UseSqlite(builder.Configuration.GetConnectionString("SQLite_MvcMovieContext") ?? throw new InvalidOperationException("Connection string 'MvcMovieContext' not found.")));
-
-    // Develpoment with Postgresql
-    builder.Services.AddDbContext<MvcMovieContext>(options =>
-        options.UseNpgsql(builder.Configuration.GetConnectionString("Postgresql_MvcMovieContext") ?? throw new InvalidOperationException("Connection string 'MvcMovieContext' not found.")));
-    AppContext.SetSwitch("Npgsql.EnableLegacyTimestampBehavior", true);
+    // Develpoment
+    builder.Services.AddDbContext<AppDbContext>(options =>
+        options.UseNpgsql(builder.Configuration.GetConnectionString("Postgresql_AppDbContext") ?? throw new InvalidOperationException("Connection string 'MvcMovieContext' not found.")));
+    // AppContext.SetSwitch("Npgsql.EnableLegacyTimestampBehavior", true);
 }
 else
 {
     // Production
+    builder.Services.AddDbContext<AppDbContext>(options =>
+        options.UseNpgsql(builder.Configuration.GetConnectionString("Postgresql_AppDbContext") ?? throw new InvalidOperationException("Connection string 'MvcMovieContext' not found.")));
+    // AppContext.SetSwitch("Npgsql.EnableLegacyTimestampBehavior", true);
 }
+#endregion
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();

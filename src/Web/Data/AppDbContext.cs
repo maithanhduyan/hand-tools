@@ -5,15 +5,15 @@ using System.Threading.Tasks;
 using Microsoft.EntityFrameworkCore;
 using Web.Models;
 
-namespace MvcMovie.Data
+namespace Web.Data
 {
-    public class MvcMovieContext : DbContext
+    public class AppDbContext : DbContext
     {
-        public MvcMovieContext (DbContextOptions<MvcMovieContext> options)
+        public AppDbContext (DbContextOptions<AppDbContext> options)
             : base(options)
         {
         }
 
-        public DbSet<Web.Models.Movie> Movie { get; set; } = default!;
+        public DbSet<Web.Models.Product> Product { get; set; } = default!;
     }
 }

@@ -7,8 +7,8 @@
     <meta name="format-detection" content="telephone=no">
     <title>@ViewData["Title"]</title>
     <link rel="icon" type="image/png" href="~/images/favicon.png"><!-- fonts -->
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:400,400i,500,500i,700,700i">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
+    @* <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:400,400i,500,500i,700,700i"> *@
+    @* <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" /> *@
     <!-- css -->
     <link rel="stylesheet" href="~/lib/fontawesome-5.6.1/css/all.min.css">
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css">
@@ -33,7 +33,7 @@
             <div class="mobilemenu__header">
                 <div class="mobilemenu__title">Menu</div><button type="button" class="mobilemenu__close"><svg
                         width="20px" height="20px">
-                        <use xlink:href="images/sprite.svg#cross-20"></use>
+                        <use xlink:href="@Web.Constants.WebConstants.HAND_TOOLS_HOST/images/sprite.svg#cross-20"></use>
                     </svg></button>
             </div>
             <div class="mobilemenu__content">
@@ -44,7 +44,7 @@
                                 class="mobile-links__item-link">Home</a> <button class="mobile-links__item-toggle"
                                 type="button" data-collapse-trigger><svg class="mobile-links__item-arrow" width="12px"
                                     height="7px">
-                                    <use xlink:href="images/sprite.svg#arrow-rounded-down-12x7"></use>
+                                    <use xlink:href="@Web.Constants.WebConstants.HAND_TOOLS_HOST/images/sprite.svg#arrow-rounded-down-12x7"></use>
                                 </svg></button></div>
                         <div class="mobile-links__item-sub-links" data-collapse-content>
                             <ul class="mobile-links mobile-links--level--1">
@@ -63,7 +63,7 @@
                         <div class="mobile-links__item-title"><a href="#" class="mobile-links__item-link">Categories</a>
                             <button class="mobile-links__item-toggle" type="button" data-collapse-trigger><svg
                                     class="mobile-links__item-arrow" width="12px" height="7px">
-                                    <use xlink:href="/images/sprite.svg#arrow-rounded-down-12x7"></use>
+                                    <use xlink:href="@Web.Constants.WebConstants.HAND_TOOLS_HOST/images/sprite.svg#arrow-rounded-down-12x7"></use>
                                 </svg></button>
                         </div>
                         <div class="mobile-links__item-sub-links" data-collapse-content>
@@ -73,7 +73,7 @@
                                             class="mobile-links__item-link">Power Tools</a> <button
                                             class="mobile-links__item-toggle" type="button" data-collapse-trigger><svg
                                                 class="mobile-links__item-arrow" width="12px" height="7px">
-                                                <use xlink:href="/images/sprite.svg#arrow-rounded-down-12x7"></use>
+                                                <use xlink:href="@Web.Constants.WebConstants.HAND_TOOLS_HOST/images/sprite.svg#arrow-rounded-down-12x7"></use>
                                             </svg></button></div>
                                     <div class="mobile-links__item-sub-links" data-collapse-content>
                                         <ul class="mobile-links mobile-links--level--2">
@@ -101,7 +101,7 @@
                                             class="mobile-links__item-link">Machine Tools</a> <button
                                             class="mobile-links__item-toggle" type="button" data-collapse-trigger><svg
                                                 class="mobile-links__item-arrow" width="12px" height="7px">
-                                                <use xlink:href="/images/sprite.svg#arrow-rounded-down-12x7"></use>
+                                                <use xlink:href="@Web.Constants.WebConstants.HAND_TOOLS_HOST/images/sprite.svg#arrow-rounded-down-12x7"></use>
                                             </svg></button></div>
                                     <div class="mobile-links__item-sub-links" data-collapse-content>
                                         <ul class="mobile-links mobile-links--level--2">
@@ -140,7 +140,7 @@
                                 class="mobile-links__item-link">Shop</a> <button class="mobile-links__item-toggle"
                                 type="button" data-collapse-trigger><svg class="mobile-links__item-arrow" width="12px"
                                     height="7px">
-                                    <use xlink:href="/images/sprite.svg#arrow-rounded-down-12x7"></use>
+                                    <use xlink:href="@Web.Constants.WebConstants.HAND_TOOLS_HOST/images/sprite.svg#arrow-rounded-down-12x7"></use>
                                 </svg></button></div>
                         <div class="mobile-links__item-sub-links" data-collapse-content>
                             <ul class="mobile-links mobile-links--level--1">
@@ -149,7 +149,7 @@
                                             class="mobile-links__item-link">Shop Grid</a> <button
                                             class="mobile-links__item-toggle" type="button" data-collapse-trigger><svg
                                                 class="mobile-links__item-arrow" width="12px" height="7px">
-                                                <use xlink:href="/images/sprite.svg#arrow-rounded-down-12x7"></use>
+                                                <use xlink:href="@Web.Constants.WebConstants.HAND_TOOLS_HOST/images/sprite.svg#arrow-rounded-down-12x7"></use>
                                             </svg></button></div>
                                     <div class="mobile-links__item-sub-links" data-collapse-content>
                                         <ul class="mobile-links mobile-links--level--2">
@@ -184,7 +184,7 @@
                                             class="mobile-links__item-link">Product</a> <button
                                             class="mobile-links__item-toggle" type="button" data-collapse-trigger><svg
                                                 class="mobile-links__item-arrow" width="12px" height="7px">
-                                                <use xlink:href="/images/sprite.svg#arrow-rounded-down-12x7"></use>
+                                                <use xlink:href="@Web.Constants.WebConstants.HAND_TOOLS_HOST/images/sprite.svg#arrow-rounded-down-12x7"></use>
                                             </svg></button></div>
                                     <div class="mobile-links__item-sub-links" data-collapse-content>
                                         <ul class="mobile-links mobile-links--level--2">
@@ -235,7 +235,7 @@
                                 class="mobile-links__item-link">Blog</a> <button class="mobile-links__item-toggle"
                                 type="button" data-collapse-trigger><svg class="mobile-links__item-arrow" width="12px"
                                     height="7px">
-                                    <use xlink:href="/images/sprite.svg#arrow-rounded-down-12x7"></use>
+                                    <use xlink:href="@Web.Constants.WebConstants.HAND_TOOLS_HOST/images/sprite.svg#arrow-rounded-down-12x7"></use>
                                 </svg></button></div>
                         <div class="mobile-links__item-sub-links" data-collapse-content>
                             <ul class="mobile-links mobile-links--level--1">
@@ -270,7 +270,7 @@
                         <div class="mobile-links__item-title"><a href="#" class="mobile-links__item-link">Pages</a>
                             <button class="mobile-links__item-toggle" type="button" data-collapse-trigger><svg
                                     class="mobile-links__item-arrow" width="12px" height="7px">
-                                    <use xlink:href="/images/sprite.svg#arrow-rounded-down-12x7"></use>
+                                    <use xlink:href="@Web.Constants.WebConstants.HAND_TOOLS_HOST/images/sprite.svg#arrow-rounded-down-12x7"></use>
                                 </svg></button>
                         </div>
                         <div class="mobile-links__item-sub-links" data-collapse-content>
@@ -315,7 +315,7 @@
                                 class="mobile-links__item-link">Currency</a> <button class="mobile-links__item-toggle"
                                 type="button" data-collapse-trigger><svg class="mobile-links__item-arrow" width="12px"
                                     height="7px">
-                                    <use xlink:href="/images/sprite.svg#arrow-rounded-down-12x7"></use>
+                                    <use xlink:href="@Web.Constants.WebConstants.HAND_TOOLS_HOST/images/sprite.svg#arrow-rounded-down-12x7"></use>
                                 </svg></button></div>
                         <div class="mobile-links__item-sub-links" data-collapse-content>
                             <ul class="mobile-links mobile-links--level--1">
@@ -343,7 +343,7 @@
                                 class="mobile-links__item-link">Language</a> <button class="mobile-links__item-toggle"
                                 type="button" data-collapse-trigger><svg class="mobile-links__item-arrow" width="12px"
                                     height="7px">
-                                    <use xlink:href="/images/sprite.svg#arrow-rounded-down-12x7"></use>
+                                    <use xlink:href="@Web.Constants.WebConstants.HAND_TOOLS_HOST/images/sprite.svg#arrow-rounded-down-12x7"></use>
                                 </svg></button></div>
                         <div class="mobile-links__item-sub-links" data-collapse-content>
                             <ul class="mobile-links mobile-links--level--1">
@@ -415,7 +415,7 @@
                                         </svg></button> <button
                                         class="mobile-header__search-button mobile-header__search-button--close"
                                         type="button"><svg width="20px" height="20px">
-                                            <use xlink:href="/images/sprite.svg#cross-20"></use>
+                                            <use xlink:href="@Web.Constants.WebConstants.HAND_TOOLS_HOST/images/sprite.svg#cross-20"></use>
                                         </svg></button>
                                     <div class="mobile-header__search-body"></div>
                                 </form>
@@ -1468,8 +1468,8 @@
     <script src="~/lib/svg4everybody-2.1.9/svg4everybody.min.js"></script>
     <script>svg4everybody();</script><!-- font - fontawesome -->
     
-    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-97489509-6"></script>
-    <script>window.dataLayer = window.dataLayer || []; function gtag() { dataLayer.push(arguments); } gtag('js', new Date()); gtag('config', 'UA-97489509-6');</script>
+    @* <script async src="https://www.googletagmanager.com/gtag/js?id=UA-97489509-6"></script> *@
+    @* <script>window.dataLayer = window.dataLayer || []; function gtag() { dataLayer.push(arguments); } gtag('js', new Date()); gtag('config', 'UA-97489509-6');</script> *@
     @await RenderSectionAsync("Scripts", required: false)
 </body>
 

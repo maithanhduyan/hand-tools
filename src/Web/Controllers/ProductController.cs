@@ -27,7 +27,7 @@ namespace Web.Controllers
                         Problem("Entity set 'AppDbContext.Product'  is null.");
         }
 
-        // GET: ShopGrid5
+        // GET: Product/ShopGrid5
         public async Task<IActionResult> ShopGrid5()
         {
             // ViewData["host"] = $"{this.Request.Scheme}://{this.Request.Host}{this.Request.PathBase}";

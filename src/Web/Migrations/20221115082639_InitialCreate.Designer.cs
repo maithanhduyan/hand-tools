@@ -11,7 +11,7 @@ using Web.Data;
 namespace Web.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    [Migration("20221111052606_InitialCreate")]
+    [Migration("20221115082639_InitialCreate")]
     partial class InitialCreate
     {
         /// <inheritdoc />

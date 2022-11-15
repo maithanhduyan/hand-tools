@@ -16,6 +16,7 @@ namespace Web.Models
 
         [Column(TypeName = "varchar(200)")]
         public string? Description { get; set; }
+        
         public string Barcode { get; set; }
 
         [MaxLength(500)]

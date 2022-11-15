@@ -26,6 +26,39 @@ dotnet add package Microsoft.EntityFrameworkCore.SqlServer
 - Run project with profile
 > dotnet run --launch-profile "http"
 
+- API Controller
+~~~~
+// For Api
+builder.Services.AddControllers();
+// Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
+builder.Services.AddEndpointsApiExplorer();
+builder.Services.AddSwaggerGen();
+
+...
+var app = builder.Build();
+
+if (app.Environment.IsDevelopment())
+{
+    app.UseSwagger();
+    app.UseSwaggerUI();
+}
+
+...
+
+app.UseEndpoints(endpoints =>
+{
+    endpoints.MapControllerRoute(
+        name: "default",
+        pattern: "{controller=Home}/{action=Index}/{id?}");
+
+    // Api
+    endpoints.MapControllers();
+});
+~~~~
+
+> dotnet-aspnet-codegenerator controller -name ProductsController -async -api -m Product -dc AppDbContext -outDir Api
+> dotnet-aspnet-codegenerator controller -name TodoItemsController -async -api -m TodoItem -dc AppDbContext -outDir Api
+
 ### References
 - UI
 [Google Icon](https://fonts.google.com/icons)

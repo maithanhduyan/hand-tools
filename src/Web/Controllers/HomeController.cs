@@ -28,7 +28,7 @@ namespace Web.Controllers
             }
             catch (Exception ex)
             {
-                //
+                _logger.LogInformation(ex.Message);
             }
 
             return View();

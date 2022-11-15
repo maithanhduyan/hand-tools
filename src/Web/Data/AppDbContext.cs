@@ -17,5 +17,6 @@ namespace Web.Data
         public DbSet<Web.Models.Product> Product { get; set; } = default!;
 
         public DbSet<Web.Models.ProductCategory> ProductCategory { get; set; } = default!;
+        
     }
 }

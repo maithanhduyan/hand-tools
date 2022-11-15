@@ -39,6 +39,18 @@ namespace Web.Controllers
             return View();
         }
 
+        [HttpGet("/wishlist")]
+        public IActionResult Wishlist()
+        {
+            return View();
+        }
+        
+        [HttpGet("/cart")]
+        public IActionResult Cart()
+        {
+            return View();
+        }
+
         public IActionResult Privacy()
         {
             return View();

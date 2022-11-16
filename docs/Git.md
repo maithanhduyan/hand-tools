@@ -15,9 +15,9 @@
 2. From develop branch create 3 new branch: feature -> hotfix -> release
     > git flow init 
 3. Commit rules
-    - feature: [feature][name] text
-    - release:yearmonthday. Ex: 20221109
-    - hotfix: error name
+    - feature: [feature-name] message
+    - release:[yearmonthday] Ex: 20221109
+    - hotfix: [fix-name] message
 ### Git command
 usage: git [--version] [--help] [-C <path>] [-c <name>=<value>]
            [--exec-path[=<path>]] [--html-path] [--man-path] [--info-path]

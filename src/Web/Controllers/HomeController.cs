@@ -1,5 +1,6 @@
 ﻿using System.Diagnostics;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using Web.Data;
 using Web.Models;
 
@@ -16,14 +17,14 @@ namespace Web.Controllers
             _context = context;
         }
 
-        public IActionResult Index()
+        public async Task<IActionResult> Index()
         {
             try
             {
-
                 if (_context.Product != null)
                 {
-
+                    var products = await _context.Product.ToListAsync();
+                    return View(products);
                 }
             }
             catch (Exception ex)
@@ -34,19 +35,24 @@ namespace Web.Controllers
             return View();
         }
 
-        public IActionResult AboutUS()
+        public IActionResult AboutUs()
         {
             return View();
         }
-
         [HttpGet("/wishlist")]
         public IActionResult Wishlist()
         {
             return View();
         }
-        
+
         [HttpGet("/cart")]
         public IActionResult Cart()
+        {
+            return View();
+        }
+
+        [HttpGet("/checkout")]
+        public IActionResult Checkout()
         {
             return View();
         }

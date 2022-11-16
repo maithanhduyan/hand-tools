@@ -20,6 +20,10 @@
 </head>
 
 <body>
+    <!-- preloader start -->
+    <div class="preloader"></div>
+    <!-- preloader end -->
+
     <!-- quickview-modal -->
     <div id="quickview-modal" class="modal fade" tabindex="-1" role="dialog" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered modal-xl">
@@ -1465,6 +1469,13 @@
     
     @* <script async src="https://www.googletagmanager.com/gtag/js?id=UA-97489509-6"></script> *@
     @* <script>window.dataLayer = window.dataLayer || []; function gtag() { dataLayer.push(arguments); } gtag('js', new Date()); gtag('config', 'UA-97489509-6');</script> *@
+   
+   <script>
+    // Preloader js
+        $(window).on("load", function () {
+            $(".preloader").fadeOut(800);
+        });
+   </script>
     @await RenderSectionAsync("Scripts", required: false)
 
     @section Scripts {

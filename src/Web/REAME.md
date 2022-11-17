@@ -26,6 +26,20 @@ dotnet add package Microsoft.EntityFrameworkCore.SqlServer
 - Run project with profile
 > dotnet run --launch-profile "http"
 
+- [Database to Models](learnentityframeworkcore.com/walkthroughs/existing-database)
+> mkdir Domain
+> cd Domain
+> dotnet new console
+> dotnet add package Npgsql.EntityFrameworkCore.PostgreSQL
+> dotnet add package Microsoft.EntityFrameworkCore.Design
+> dotnet ef dbcontext scaffold "Host=localhost;Database=nijimise_db;Username=postgres;Password=123" Npgsql.EntityFrameworkCore.PostgreSQL -o Models
+
+- Reference Project
+    - List
+> dotnet list reference
+> learnentityframeworkcore.com/walkthroughs/existing-database
+
+
 - API Controller
 ~~~~
 // For Api

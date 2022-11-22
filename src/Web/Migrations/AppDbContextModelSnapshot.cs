@@ -31,7 +31,6 @@ namespace Web.Migrations
                     NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("Id"));
 
                     b.Property<string>("Barcode")
-                        .IsRequired()
                         .HasColumnType("text");
 
                     b.Property<decimal>("Cost")

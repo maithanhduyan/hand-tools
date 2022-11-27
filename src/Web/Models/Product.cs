@@ -1,6 +1,6 @@
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
-using Domain.Core.Entity;
+using HandTools.ApplicationCore.Entities;
 
 namespace Web.Models
 {

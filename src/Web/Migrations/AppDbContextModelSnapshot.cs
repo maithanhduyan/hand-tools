@@ -22,7 +22,7 @@ namespace Web.Migrations
 
             NpgsqlModelBuilderExtensions.UseIdentityByDefaultColumns(modelBuilder);
 
-            modelBuilder.Entity("Domain.Core.Entity.Cart", b =>
+            modelBuilder.Entity("HandTools.ApplicationCore.Entities.Cart", b =>
                 {
                     b.Property<string>("Id")
                         .HasColumnType("text")
@@ -39,7 +39,7 @@ namespace Web.Migrations
                     b.ToTable("Cart");
                 });
 
-            modelBuilder.Entity("Domain.Core.Entity.CartDetail", b =>
+            modelBuilder.Entity("HandTools.ApplicationCore.Entities.CartDetail", b =>
                 {
                     b.Property<string>("Id")
                         .HasColumnType("text")

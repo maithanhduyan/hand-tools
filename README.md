@@ -7,3 +7,4 @@ A e-commerce website for hand tools.
 - dotnet-architecture
 [eShopOnWeb](https://github.com/dotnet-architecture/eShopOnWeb)
 [aspnet core 7.0](https://learn.microsoft.com/en-us/aspnet/core/?view=aspnetcore-7.0)
+[repository pattern](https://deviq.com/design-patterns/repository-pattern)

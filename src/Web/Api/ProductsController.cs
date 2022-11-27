@@ -53,7 +53,7 @@ namespace Web.Api
         // PUT: api/Products/5
         // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
         [HttpPut("{id}")]
-        public async Task<IActionResult> PutProduct(int id, Product product)
+        public async Task<IActionResult> PutProduct(string id, Product product)
         {
             if (id != product.Id)
             {
@@ -116,7 +116,7 @@ namespace Web.Api
             return NoContent();
         }
 
-        private bool ProductExists(int id)
+        private bool ProductExists(string id)
         {
             return (_context.Product?.Any(e => e.Id == id)).GetValueOrDefault();
         }

@@ -1,22 +1,19 @@
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
+using Domain.Core.Entity;
 
 namespace Web.Models
 {
-    [Table("products")]
-    public class Product
+    public class Product : EntityBase
     {
-        [Key]
-        [Column(Order = 0)]
-        public int Id { get; set; }
-        
+
         [Required(ErrorMessage = "The Name field is required")]
         [Column(Order = 1, TypeName = "varchar(200)")]
         public string? Name { get; set; }
 
         [Column(TypeName = "varchar(200)")]
         public string? Description { get; set; }
-        
+
         public string? Barcode { get; set; }
 
         [MaxLength(500)]

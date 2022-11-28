@@ -11,6 +11,6 @@ Infrastructure types
 
 ~~~~
 
-dotnet ef dbcontext scaffold "Host=localhost;Database=nijimise_db;Username=postgres;Password=123" Npgsql.EntityFrameworkCore.PostgreSQL -o Models
+dotnet ef dbcontext scaffold "Host=localhost;Database=nijimise_db;Username=postgres;Password=123" Npgsql.EntityFrameworkCore.PostgreSQL -o Data
 
 ~~~~

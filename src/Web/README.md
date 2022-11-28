@@ -32,7 +32,7 @@ dotnet add package Microsoft.EntityFrameworkCore.SqlServer
 > dotnet new console
 > dotnet add package Npgsql.EntityFrameworkCore.PostgreSQL
 > dotnet add package Microsoft.EntityFrameworkCore.Design
-> dotnet ef dbcontext scaffold "Host=localhost;Database=nijimise_db;Username=postgres;Password=123" Npgsql.EntityFrameworkCore.PostgreSQL -o Models
+> dotnet ef dbcontext scaffold "Host=localhost;Database=handtools_db;Username=postgres;Password=123" Npgsql.EntityFrameworkCore.PostgreSQL -o Models
 
 - Reference Project
     - List

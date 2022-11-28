@@ -1,4 +1,4 @@
-namespace Web.Constants
+namespace HandTools.Web.Constants
 {
     public class WebConstants
     {

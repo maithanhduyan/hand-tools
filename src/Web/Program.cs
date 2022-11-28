@@ -9,14 +9,14 @@ if (builder.Environment.IsDevelopment())
 {
     // Develpoment
     builder.Services.AddDbContext<AppDbContext>(options =>
-        options.UseNpgsql(builder.Configuration.GetConnectionString("Postgresql_AppDbContext") ?? throw new InvalidOperationException("Connection string 'MvcMovieContext' not found.")));
+        options.UseNpgsql(builder.Configuration.GetConnectionString("Postgresql") ?? throw new InvalidOperationException("Connection string 'Postgresql' not found.")) );
     // AppContext.SetSwitch("Npgsql.EnableLegacyTimestampBehavior", true);
 }
 else
 {
     // Production
     builder.Services.AddDbContext<AppDbContext>(options =>
-        options.UseNpgsql(builder.Configuration.GetConnectionString("Postgresql_AppDbContext") ?? throw new InvalidOperationException("Connection string 'MvcMovieContext' not found.")));
+        options.UseNpgsql(builder.Configuration.GetConnectionString("Postgresql") ?? throw new InvalidOperationException("Connection string 'Postgresql' not found.")));
     // AppContext.SetSwitch("Npgsql.EnableLegacyTimestampBehavior", true);
 }
 #endregion

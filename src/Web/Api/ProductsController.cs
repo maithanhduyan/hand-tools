@@ -6,7 +6,7 @@ using HandTools.ApplicationCore.Entities;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
-using Web.Data;
+using HandTools.Infrastructure.Data;
 
 namespace Web.Api
 {

@@ -1,8 +1,8 @@
 ﻿using System.Diagnostics;
+using HandTools.Web.Models;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
-using Web.Data;
-using Web.Models;
+using HandTools.Infrastructure.Data;
 
 namespace Web.Controllers
 {

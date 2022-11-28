@@ -5,8 +5,7 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
-using Web.Data;
-using Web.Models;
+using HandTools.Infrastructure.Data;
 
 namespace Web.Controllers
 {

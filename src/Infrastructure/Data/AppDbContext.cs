@@ -8,7 +8,7 @@ namespace HandTools.Infrastructure.Data
 {
     public class AppDbContext : DbContext
     {
-        public AppDbContext (DbContextOptions<AppDbContext> options)
+        public AppDbContext(DbContextOptions<AppDbContext> options)
             : base(options)
         {
         }
@@ -18,6 +18,6 @@ namespace HandTools.Infrastructure.Data
         public DbSet<HandTools.ApplicationCore.Entities.ProductCategory> ProductCategory { get; set; } = default!;
         public DbSet<HandTools.ApplicationCore.Entities.Cart> Cart { get; set; } = default!;
         public DbSet<HandTools.ApplicationCore.Entities.CartDetail> CartDetail { get; set; } = default!;
-        
+
     }
 }

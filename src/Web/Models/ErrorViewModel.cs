@@ -1,4 +1,4 @@
-namespace Web.Models
+namespace HandTools.Web.Models
 {
     public class ErrorViewModel
     {

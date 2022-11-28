@@ -1,7 +1,6 @@
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
-using Web.Models;
-using Web.Data;
+using HandTools.Infrastructure.Data;
 
 var builder = WebApplication.CreateBuilder(args);
 
